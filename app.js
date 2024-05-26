@@ -8,11 +8,10 @@ const PORT = 3000
 //config
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
+app.use(express.static('public'))
 
 //routing
-app.get('/', (req, res) => {
-    res.render('pages/home.ejs')
-})
+app.use(router)
 
 app.listen(PORT, () => {
     console.log('LOCALSERVER STARTED AT PORT ' + PORT);
